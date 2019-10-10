@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 19:40:50 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/10 13:56:16 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/10 13:59:41 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	curr = *lst;
 	if (curr)
+	{
 		while (curr->next)
 		{
 			curr = *lst;
