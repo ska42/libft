@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:58:10 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/10 13:29:38 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/10 13:53:03 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*pt;
 
 	i = 0;
-	while (s[i] && i < (int) start)
+	while (s[i] && i < (int)start)
 		i++;
-	if (i < start)
+	if (i < (int)start)
 		return (0);
 	if (!(pt = malloc((len + 1) * sizeof(char))))
 		return (0);

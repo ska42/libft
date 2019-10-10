@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 19:27:58 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/09 21:21:11 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/10 13:57:54 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
-	free(lst);
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
