@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:14:49 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/09 20:23:11 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/11 10:42:52 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 	char	*pt;
 
-	i = 0;
 	len = 0;
-	while (s1[i++])
+	while (s1[len])
 		len++;
 	temp = len;
 	i = 0;

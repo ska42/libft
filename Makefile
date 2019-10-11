@@ -6,13 +6,11 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2019/10/10 14:26:11 by lmartin          ###   ########.fr        #
+#    Updated: 2019/10/11 12:49:56 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-BONUS_NAME = libft_bonus.a
 
 SRC	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 	ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memccpy.c\
@@ -40,17 +38,15 @@ $(NAME):
 				ar rc $(NAME) $(OBJ)
 				ranlib $(NAME)
 
-bonus : $(BONUS_NAME)
-
-$(BONUS_NAME):
-				gcc $(FLAG) $(OPTION) $(BONUS)
-				ar rc $(BONUS_NAME) $(OBJBONUS)
-				ranlib $(BONUS_NAME)
+bonus :
+				gcc $(FLAG) $(OPTION) $(SRC) $(BONUS)
+				ar rc $(NAME) $(OBJ) $(OBJBONUS)
+				ranlib $(NAME)
 
 clean:
 				/bin/rm -f $(OBJ) $(OBJBONUS)
 
 fclean: clean
-				/bin/rm -f $(NAME) $(BONUS_NAME)
+				/bin/rm -f $(NAME)
 
-re: fclean all bonus
+re: fclean all

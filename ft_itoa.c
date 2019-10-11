@@ -6,11 +6,21 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:21:36 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/09 20:59:52 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/11 13:25:32 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*case_zero(void)
+{
+	char		*res;
+
+	if (!(res = malloc(2 * sizeof(char))))
+		return (0);
+	res = "0\0";
+	return (res);
+}
 
 void	reverse(int i, int j, char *res)
 {
@@ -33,11 +43,12 @@ char	*ft_itoa(int n)
 	j = n;
 	i = 0;
 	if (!n)
-		return ("0");
+		return (case_zero());
 	while (n)
 		n = n / 10 + 0 * i++;
 	n = (j < 0) ? -1 : 1;
-	i = (j < 0) ? i + 1 : i;
+	if (j < 0)
+		i++;
 	j *= 10 * n;
 	if (!(res = malloc((i + 1) * sizeof(char))))
 		return (0);
