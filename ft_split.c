@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:51:21 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/11 15:28:04 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/11 17:47:25 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	char	**res;
 
+	if (!s)
+		return (0);
 	count = nb_split(s, c);
 	if (!(res = malloc((count + 1) * sizeof(char *))))
 		return (0);
