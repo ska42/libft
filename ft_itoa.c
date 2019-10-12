@@ -6,58 +6,34 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:21:36 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/11 13:25:32 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/12 15:14:44 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*case_zero(void)
-{
-	char		*res;
-
-	if (!(res = malloc(2 * sizeof(char))))
-		return (0);
-	res = "0\0";
-	return (res);
-}
-
-void	reverse(int i, int j, char *res)
-{
-	int n;
-
-	while (j < i)
-	{
-		n = res[j];
-		res[j++] = res[i];
-		res[i--] = n;
-	}
-}
-
 char	*ft_itoa(int n)
 {
-	long		i;
-	long		j;
-	char		*res;
+	char	*str;
+	long	nnbr;
+	long	power;
+	int		size;
+	int		sign;
 
-	j = n;
-	i = 0;
-	if (!n)
-		return (case_zero());
-	while (n)
-		n = n / 10 + 0 * i++;
-	n = (j < 0) ? -1 : 1;
-	if (j < 0)
-		i++;
-	j *= 10 * n;
-	if (!(res = malloc((i + 1) * sizeof(char))))
+	sign = (n < 0) ? -1 : 1;
+	nnbr = n;
+	power = 10;
+	size = (n <= 0) ? 1 : 0;
+	while (n /= 10)
+		power = power * 10 + (0 * size++);
+	if (!(str = malloc(sizeof(char) * (size + 1))))
 		return (0);
-	i = -1;
-	while (j /= 10)
-		res[++i] = j % 10 + 48;
-	if (n < 0)
-		res[++i] = '-';
-	res[i + 1] = '\0';
-	reverse(i, j, res);
-	return (res);
+	nnbr *= sign;
+	size = (sign < 0) ? 1 : 0;
+	while (power /= 10)
+		str[size++] = ((nnbr / power) % 10) + 48;
+	if (sign == -1)
+		str[0] = '-';
+	str[size] = '\0';
+	return (str);
 }
