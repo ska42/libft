@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:58:10 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/11 15:05:44 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/12 10:39:39 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	if (!(pt = malloc((len + 1) * sizeof(char))))
 		return (0);
-	i = -1;
-	while (++i < (int)len)
+	i = 0;
+	while (i < (int)len && s[start + i] != '\0')
+	{
 		pt[i] = s[start + i];
+		i++;
+	}
 	pt[i] = '\0';
 	return (pt);
 }
