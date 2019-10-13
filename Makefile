@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2019/10/11 12:49:56 by lmartin          ###   ########.fr        #
+#    Updated: 2019/10/13 04:28:59 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,15 +33,16 @@ OPTION = -c
 
 all: $(NAME)
 
-$(NAME):
-				gcc $(FLAG) $(OPTION) $(SRC)
+$(NAME):		$(OBJ)
 				ar rc $(NAME) $(OBJ)
 				ranlib $(NAME)
 
-bonus :
-				gcc $(FLAG) $(OPTION) $(SRC) $(BONUS)
+bonus :			$(OBJ) $(OBJBONUS)
 				ar rc $(NAME) $(OBJ) $(OBJBONUS)
 				ranlib $(NAME)
+
+%.o: %.c
+				gcc $(FLAG) -c $< -o $@
 
 clean:
 				/bin/rm -f $(OBJ) $(OBJBONUS)
