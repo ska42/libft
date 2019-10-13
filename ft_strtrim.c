@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:24:39 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/13 03:54:04 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/13 06:35:53 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (s1[j] == set[i++])
 			i = 0 * j++;
 	start = j;
-	while (s1[j + 1])
+	while (s1[j] && s1[j + 1])
 		i = 0 * j++;
 	while (set[i] && s1[j])
 		if (s1[j] == set[i++])
