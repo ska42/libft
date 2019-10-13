@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:20:43 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/09 15:20:11 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/13 04:16:26 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		write(fd, s++, 1);
+	if (s)
+		while (*s)
+			write(fd, s++, 1);
 }

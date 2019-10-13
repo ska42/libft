@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:24:39 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/11 10:47:29 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/13 03:54:04 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !set)
+		return (0);
 	while (set[i] && s1[j])
 		if (s1[j] == set[i++])
 			i = 0 * j++;
@@ -30,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (set[i] && s1[j])
 		if (s1[j] == set[i++])
 			i = 0 * j--;
-	if (((i *= 0) == 0) && !(pt = malloc((j - start + 2) * sizeof(char))))
+	if (!(i *= 0) && !(pt = malloc((j - start + 2) * sizeof(char))))
 		return (0);
 	while (start <= j)
 		pt[i++] = s1[start++];

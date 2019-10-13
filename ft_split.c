@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:51:21 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/13 02:27:25 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/13 03:57:19 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char	**ft_split(char const *s, char c)
 	size = 0;
 	i = 0;
 	n = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		if (s[i++] != c)
 			n++;

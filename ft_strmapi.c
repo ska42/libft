@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:11:44 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/11 15:06:04 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/13 04:13:09 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*res;
 
+	if (!s || !(*f))
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;
