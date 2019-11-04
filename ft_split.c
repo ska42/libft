@@ -6,12 +6,11 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:51:21 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/13 03:57:19 by lmartin          ###   ########.fr       */
+/*   Updated: 2019/10/13 16:22:43 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int		free_all(char **str, int j)
 {
