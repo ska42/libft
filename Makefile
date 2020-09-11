@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2020/09/12 00:22:56 by lmartin          ###   ########.fr        #
+#    Updated: 2020/09/12 01:03:43 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,12 +58,16 @@ RM			=	rm -rf
 
 # DIRECTORIES #
 
-DIR_HEADERS =	./includes/
+DIR_HEADERS		=	./includes/
 
-DIR_SRCS	=	./srcs/
+DIR_SRCS		=	./srcs/
 
-DIR_OBJS	=	./compiled_srcs/
+DIR_OBJS		=	./compiled_srcs/
 
+SUB_DIRS		=	. \
+					list
+
+SUB_DIR_OBJS	=	$(SUB_DIRS:%=$(DIR_OBJS)%)
 
 # FILES #
 
@@ -77,15 +81,6 @@ SRCS			=	ft_atoi.c \
 					ft_isprint.c \
 					ft_iswhitespace.c \
 					ft_itoa.c \
-					ft_lstadd_back.c \
-					ft_lstadd_front.c \
-					ft_lstclear.c \
-					ft_lstdelone.c \
-					ft_lstiter.c \
-					ft_lstlast.c \
-					ft_lstmap.c \
-					ft_lstnew.c \
-					ft_lstsize.c \
 					ft_memccpy.c \
 					ft_memchr.c \
 					ft_memcmp.c \
@@ -111,8 +106,16 @@ SRCS			=	ft_atoi.c \
 					ft_strtrim.c \
 					ft_substr.c \
 					ft_tolower.c \
-					ft_toupper.c
-
+					ft_toupper.c \
+					list/ft_lstadd_back.c \
+					list/ft_lstadd_front.c \
+					list/ft_lstclear.c \
+					list/ft_lstdelone.c \
+					list/ft_lstiter.c \
+					list/ft_lstlast.c \
+					list/ft_lstmap.c \
+					list/ft_lstnew.c \
+					list/ft_lstsize.c
 
 # COMPILED_SOURCES #
 
@@ -142,9 +145,10 @@ $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
 				@printf "\033[2K\r $(_YELLOW)Compiling $< $(_END)⌛"
 				@$(CC) $(CC_FLAGS) -I $(DIR_HEADERS) -c $< -o $@
 
-$(DIR_OBJS):
-				@mkdir $(DIR_OBJS)
+$(DIR_OBJS):	$(SUB_DIR_OBJS)
 
+$(SUB_DIR_OBJS):
+				@mkdir -p $(SUB_DIR_OBJS)
 
 # OBLIGATORY PART #
 
