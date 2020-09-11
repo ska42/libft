@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:41:28 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/08 16:13:28 by lmartin          ###   ########.fr       */
+/*   Created: 2019/10/07 16:46:05 by lmartin           #+#    #+#             */
+/*   Updated: 2020/09/11 23:48:54 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int		ft_atoi(const char *str)
 {
-	if (c < 65 || (c > 90 && c < 97) || c > 122)
-		return (0);
-	return (1);
+	char *ptr;
+	int num;
+	int sign;
+
+	ptr = (char *)str;
+	num = 0;
+	sign = 1;
+	while (ft_iswhitespace(*ptr))
+		ptr++;
+	if (*ptr == '-' || *ptr == '+')
+		sign *= (*ptr++ == '-') ? -1 : 1;
+	while (ft_isdigit(*ptr))
+		num = num * 10 + *ptr++ - '0';
+	return (num * sign);
 }

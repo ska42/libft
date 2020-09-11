@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 19:24:28 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/20 14:10:34 by lmartin          ###   ########.fr       */
+/*   Created: 2019/10/07 14:41:28 by lmartin           #+#    #+#             */
+/*   Updated: 2020/09/11 22:46:39 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+int		ft_isalpha(int c)
 {
-	t_list	*curr;
-
-	curr = *alst;
-	if (curr)
-	{
-		while (curr->next)
-			curr = curr->next;
-		curr->next = new;
-	}
-	else
-		*alst = new;
+	if (c < 'A' || (c > 'Z' && c < 'a') || c > 'z')
+		return (0);
+	return (1);
 }

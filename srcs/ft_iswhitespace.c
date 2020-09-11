@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 19:46:36 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/11 15:47:09 by lmartin          ###   ########.fr       */
+/*   Created: 2020/09/11 22:29:48 by lmartin           #+#    #+#             */
+/*   Updated: 2020/09/11 22:32:46 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int		ft_iswhitespace(int c)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	if (c == '\t' || c == '\v' || c == '\n' || c == '\f' || c == '\r' ||
+c == ' ')
+		return (1);
+	return (0);
 }
