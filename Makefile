@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2020/09/11 23:50:41 by lmartin          ###   ########.fr        #
+#    Updated: 2020/09/12 00:02:57 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,8 +129,8 @@ all:			$(NAME)
 # VARIABLES RULES #
 
 $(NAME):		$(OBJS)
-				@ar rc $(NAME) $(OBJS)
 				@printf "\033[2K\r$(_GREEN) All files compiled into '$(DIR_OBJS)'. $(_END)✅\n"
+				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
 				@printf "$(_GREEN) Library '$(NAME)' created. $(_END)✅\n"
 
