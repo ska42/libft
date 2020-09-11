@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2020/09/12 01:03:43 by lmartin          ###   ########.fr        #
+#    Updated: 2020/09/12 01:19:34 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,48 +65,53 @@ DIR_SRCS		=	./srcs/
 DIR_OBJS		=	./compiled_srcs/
 
 SUB_DIRS		=	. \
+					char \
+					print \
+					str \
+					num \
+					mem \
 					list
 
 SUB_DIR_OBJS	=	$(SUB_DIRS:%=$(DIR_OBJS)%)
 
 # FILES #
 
-SRCS			=	ft_atoi.c \
-					ft_bzero.c \
-					ft_calloc.c \
-					ft_isalnum.c \
-					ft_isalpha.c \
-					ft_isascii.c \
-					ft_isdigit.c \
-					ft_isprint.c \
-					ft_iswhitespace.c \
-					ft_itoa.c \
-					ft_memccpy.c \
-					ft_memchr.c \
-					ft_memcmp.c \
-					ft_memcpy.c \
-					ft_memccpy.c \
-					ft_memmove.c \
-					ft_memset.c \
-					ft_putchar_fd.c \
-					ft_putendl_fd.c \
-					ft_putnbr_fd.c \
-					ft_putstr_fd.c \
-					ft_split.c \
-					ft_strchr.c \
-					ft_strdup.c \
-					ft_strjoin.c \
-					ft_strlcat.c \
-					ft_strlcpy.c \
-					ft_strlen.c \
-					ft_strmapi.c \
-					ft_strncmp.c \
-					ft_strnstr.c \
-					ft_strrchr.c \
-					ft_strtrim.c \
-					ft_substr.c \
-					ft_tolower.c \
-					ft_toupper.c \
+SRCS			=	char/ft_isalnum.c \
+					char/ft_isalpha.c \
+					char/ft_isascii.c \
+					char/ft_isdigit.c \
+					char/ft_isprint.c \
+					char/ft_iswhitespace.c \
+					char/ft_tolower.c \
+					char/ft_toupper.c \
+					print/ft_putchar_fd.c \
+					print/ft_putendl_fd.c \
+					print/ft_putnbr_fd.c \
+					print/ft_putstr_fd.c \
+					str/ft_split.c \
+					str/ft_strchr.c \
+					str/ft_strdup.c \
+					str/ft_strjoin.c \
+					str/ft_strlcat.c \
+					str/ft_strlcpy.c \
+					str/ft_strlen.c \
+					str/ft_strmapi.c \
+					str/ft_strncmp.c \
+					str/ft_strnstr.c \
+					str/ft_strrchr.c \
+					str/ft_strtrim.c \
+					str/ft_substr.c \
+					num/ft_atoi.c \
+					num/ft_itoa.c \
+					mem/ft_bzero.c \
+					mem/ft_calloc.c \
+					mem/ft_memccpy.c \
+					mem/ft_memchr.c \
+					mem/ft_memcmp.c \
+					mem/ft_memcpy.c \
+					mem/ft_memccpy.c \
+					mem/ft_memmove.c \
+					mem/ft_memset.c \
 					list/ft_lstadd_back.c \
 					list/ft_lstadd_front.c \
 					list/ft_lstclear.c \
