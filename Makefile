@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2020/09/12 00:02:57 by lmartin          ###   ########.fr        #
+#    Updated: 2020/09/12 00:22:56 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,8 +156,12 @@ fclean:			clean
 				@$(RM) $(NAME)
 				@printf "$(_RED) '"$(NAME)"' has been deleted. $(_END)🗑️\n"
 
+norm:
+				@${HOME}/.norminette/norminette.rb $(DIR_SRCS)
+				@${HOME}/.norminette/norminette.rb $(DIR_HEADERS)
+
 re:				fclean all
 
 # PHONY #
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean re norm

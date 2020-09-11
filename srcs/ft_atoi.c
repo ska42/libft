@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:46:05 by lmartin           #+#    #+#             */
-/*   Updated: 2020/09/11 23:48:54 by lmartin          ###   ########.fr       */
+/*   Updated: 2020/09/12 00:23:35 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	char *ptr;
-	int num;
-	int sign;
+	char	*ptr;
+	int		num;
+	int		sign;
 
 	ptr = (char *)str;
 	num = 0;
