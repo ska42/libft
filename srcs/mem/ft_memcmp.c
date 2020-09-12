@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 08:17:36 by lmartin           #+#    #+#             */
-/*   Updated: 2020/09/11 23:19:53 by lmartin          ###   ########.fr       */
+/*   Updated: 2020/09/12 11:27:53 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	pt_s2 = (unsigned char *)s2;
 	while (n--)
 		if (*pt_s1++ != *pt_s2++)
-			return (pt_s1[-1] - pt_s2[-1]);
+			return ((pt_s1 - 1) - (pt_s2 - 1));
 	return (0);
 }
