@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:26:59 by lmartin           #+#    #+#             */
-/*   Updated: 2019/10/09 15:20:36 by lmartin          ###   ########.fr       */
+/*   Updated: 2020/09/15 19:30:00 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	const char *ptr;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	ptr = s;
+	while (*ptr)
+		++ptr;
+	return (ptr - s);
 }
