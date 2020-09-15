@@ -6,7 +6,7 @@
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:18:05 by lmartin           #+#    #+#             */
-/*   Updated: 2020/09/15 19:18:19 by lmartin          ###   ########.fr       */
+/*   Updated: 2020/09/15 20:08:14 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	sub_buffer(char buffer[])
 {
-	long	i;
-	long	j;
+	int		i;
+	int		j;
 	char	cpy[BUFFER_SIZE + 1];
 
 	i = 0;
@@ -37,8 +37,8 @@ void	sub_buffer(char buffer[])
 
 int		check_file(int fd, char files[][BUFFER_SIZE + 1])
 {
-	long	len;
-	long	nb_read;
+	int		len;
+	int		nb_read;
 
 	if (fd < 0 || fd > (MAX_FD - 1))
 		return (-1);
@@ -57,7 +57,7 @@ int		check_file(int fd, char files[][BUFFER_SIZE + 1])
 
 int		copy_and_cut_buffer(int size, int length, char **line, char buffer[])
 {
-	long			i;
+	int				i;
 	char			cpy[size];
 
 	i = -1;
