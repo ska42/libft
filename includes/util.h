@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   util.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 16:04:13 by lmartin           #+#    #+#             */
-/*   Updated: 2020/09/15 19:12:55 by lmartin          ###   ########.fr       */
+/*   Created: 2020/09/15 19:09:37 by lmartin           #+#    #+#             */
+/*   Updated: 2020/09/15 19:18:34 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef UTIL_H
+# define UTIL_H
 
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
 
-# include "char.h"
-# include "print.h"
-# include "str.h"
-# include "num.h"
-# include "mem.h"
-# include "list.h"
-# include "util.h"
+# ifndef MAX_FD
+#  define MAX_FD 128
+# endif
+
+int		get_next_line(int fd, char **line);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2020/09/12 01:19:34 by lmartin          ###   ########.fr        #
+#    Updated: 2020/09/15 19:08:56 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SUB_DIRS		=	. \
 					str \
 					num \
 					mem \
-					list
+					list \
+					util
 
 SUB_DIR_OBJS	=	$(SUB_DIRS:%=$(DIR_OBJS)%)
 
@@ -120,7 +121,8 @@ SRCS			=	char/ft_isalnum.c \
 					list/ft_lstlast.c \
 					list/ft_lstmap.c \
 					list/ft_lstnew.c \
-					list/ft_lstsize.c
+					list/ft_lstsize.c \
+					util/get_next_line.c
 
 # COMPILED_SOURCES #
 
