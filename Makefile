@@ -6,7 +6,7 @@
 #    By: lmartin <lmartin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 15:46:17 by lmartin           #+#    #+#              #
-#    Updated: 2020/09/15 19:08:56 by lmartin          ###   ########.fr        #
+#    Updated: 2020/09/16 11:42:40 by lmartin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,14 @@ _ICYAN		=	\e[46m
 _IWHITE		=	\e[47m
 
 # **************************************************************************** #
+
+# NORMINETTE #
+
+NORMINETTE	:=	$(shell which norminette)
+
+ifeq ($$?, 1)
+	NORMINETTE := ${HOME}/.norminette/norminette.rb
+endif
 
 ## VARIABLES ##
 
@@ -168,8 +176,8 @@ fclean:			clean
 				@printf "$(_RED) '"$(NAME)"' has been deleted. $(_END)🗑️\n"
 
 norm:
-				@${HOME}/.norminette/norminette.rb $(DIR_SRCS)
-				@${HOME}/.norminette/norminette.rb $(DIR_HEADERS)
+				@$(NORMINETTE) $(DIR_SRCS)
+				@$(NORMINETTE) $(DIR_HEADERS)
 
 re:				fclean all
 
